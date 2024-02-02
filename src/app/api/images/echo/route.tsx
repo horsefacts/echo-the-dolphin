@@ -1,8 +1,7 @@
 import { NextRequest } from "next/server";
-import { ImageResponse } from 'next/og';
+import { ImageResponse } from "next/og";
 import { join } from "path";
 import * as fs from "fs";
-
 
 export const dynamic = "force-dynamic";
 
@@ -16,32 +15,61 @@ export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
   const message = searchParams.get("message") ?? "";
   return new ImageResponse(
-    <div
-      style={{
-        paddingTop: 120,
-        justifyContent: "flex-start",
-        alignItems: "center",
-        textAlign: "center",
-        display: "flex",
-        flexDirection: "column",
-        width: "100%",
-        height: "100%",
-        backgroundColor: "white",
-        lineHeight: 1.2,
-        fontSize: 36,
-        color: "black",
-      }}
-    >
-      <img
-        width="420"
-        height="420"
-        src="https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2639523a-690b-47af-16ab-ca07697fd000/original"
-      />
-      <div style={{ marginTop: 12, color: '#0a588c', display: 'flex' }}><strong>Echo Says:</strong></div>
-      <div style={{ display: "flex" }}>
-        &quot;{message}&quot;
+    (
+      <div
+        style={{
+          display: "flex", // Use flex layout
+          flexDirection: "row", // Align items horizontally
+          alignItems: "stretch", // Stretch items to fill the container height
+          width: "100%",
+          height: "100vh", // Full viewport height
+          backgroundColor: "white",
+        }}
+      >
+        <img
+          style={{
+            height: "100%", // Make image full height
+            objectFit: "cover", // Cover the area without losing aspect ratio
+            width: "40%", // Image takes up 40% of the container's width
+          }}
+          src="https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2639523a-690b-47af-16ab-ca07697fd000/original"
+        />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            paddingLeft: 24,
+            paddingRight: 24,
+            lineHeight: 1.2,
+            fontSize: 36,
+            color: "black",
+            flex: 1,
+            overflow: "hidden",
+            marginTop: 24,
+          }}
+        >
+          <div
+            style={{
+              color: "#0a588c",
+              fontSize: 72,
+              marginBottom: 12,
+              display: "flex"
+            }}
+          >
+            <strong>Echo Says...</strong>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              overflow: "hidden",
+            }}
+          >
+            &quot;{message}&quot;
+          </div>
+        </div>
       </div>
-    </div>,
+    ),
     {
       width: 1200,
       height: 800,
