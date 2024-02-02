@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
   const svg = await satori(
     <div
       style={{
-        paddingTop: 48,
+        paddingTop: 64,
         justifyContent: "flex-start",
         alignItems: "center",
         textAlign: "center",
@@ -33,8 +33,8 @@ export async function GET(req: NextRequest) {
       }}
     >
       <img
-        width="210"
-        height="210"
+        width="150"
+        height="150"
         src="https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2639523a-690b-47af-16ab-ca07697fd000/original"
       />
       <div style={{ marginTop: 12, color: '#0a588c', display: 'flex' }}><strong>Echo Says:</strong></div>

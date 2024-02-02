@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
           <meta name="fc:frame:post_url" content="${postUrl}" />
           <meta name="fc:frame:image" content="${imageUrl}" />
           <meta name="fc:frame:button:1" content="See code" />
-          <meta name="fc:frame:button:action" content="post_redirect" />
+          <meta name="fc:frame:button:1:action" content="post_redirect" />
         </head>
         <body/>
       </html>`,
