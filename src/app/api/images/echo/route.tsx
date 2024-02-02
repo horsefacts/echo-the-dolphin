@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
-import satori from "satori";
-import sharp from "sharp";
+import { NextRequest } from "next/server";
+import { ImageResponse } from 'next/og';
 import { join } from "path";
 import * as fs from "fs";
+
 
 export const dynamic = "force-dynamic";
 
@@ -15,7 +15,7 @@ let interBold = fs.readFileSync(interBoldPath);
 export async function GET(req: NextRequest) {
   const searchParams = req.nextUrl.searchParams;
   const message = searchParams.get("message") ?? "";
-  const svg = await satori(
+  return new ImageResponse(
     <div
       style={{
         paddingTop: 64,
@@ -61,16 +61,4 @@ export async function GET(req: NextRequest) {
       ],
     }
   );
-
-  const img = await sharp(Buffer.from(svg))
-    .resize(1200)
-    .toFormat("png")
-    .toBuffer();
-  return new NextResponse(img, {
-    status: 200,
-    headers: {
-      "Content-Type": "image/png",
-      "Cache-Control": "max-age=10",
-    },
-  });
 }

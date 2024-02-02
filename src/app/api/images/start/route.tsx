@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-import satori from "satori";
-import sharp from "sharp";
+import { ImageResponse } from 'next/og';
 import { join } from "path";
 import * as fs from "fs";
 
@@ -11,7 +10,7 @@ const interBoldPath = join(process.cwd(), "public/Inter-Bold.ttf");
 let interBold = fs.readFileSync(interBoldPath);
 
 export async function GET() {
-  const svg = await satori(
+  return new ImageResponse(
     <div
       style={{
         paddingTop: 64,
@@ -57,16 +56,4 @@ export async function GET() {
       ],
     }
   );
-
-  const img = await sharp(Buffer.from(svg))
-    .resize(1200)
-    .toFormat("png")
-    .toBuffer();
-  return new NextResponse(img, {
-    status: 200,
-    headers: {
-      "Content-Type": "image/png",
-      "Cache-Control": "max-age=10",
-    },
-  });
 }
