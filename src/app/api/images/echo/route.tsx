@@ -28,13 +28,13 @@ export async function GET(req: NextRequest) {
         height: "100%",
         backgroundColor: "white",
         lineHeight: 1.2,
-        fontSize: 24,
+        fontSize: 36,
         color: "black",
       }}
     >
       <img
-        width="150"
-        height="150"
+        width="450"
+        height="450"
         src="https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2639523a-690b-47af-16ab-ca07697fd000/original"
       />
       <div style={{ marginTop: 12, color: '#0a588c', display: 'flex' }}><strong>Echo Says:</strong></div>
