@@ -13,7 +13,7 @@ export async function GET() {
   return new ImageResponse(
     <div
       style={{
-        paddingTop: 108,
+        paddingTop: 120,
         justifyContent: "flex-start",
         alignItems: "center",
         textAlign: "center",
@@ -28,8 +28,8 @@ export async function GET() {
       }}
     >
       <img
-        width="450"
-        height="450"
+        width="420"
+        height="420"
         src="https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2639523a-690b-47af-16ab-ca07697fd000/original"
       />
       <div style={{ marginTop: 12, color: '#0a588c', display: "flex" }}><strong>Echo The Dolphin</strong></div>
