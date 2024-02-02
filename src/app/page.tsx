@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Yoink from "@/app/components/Echo";
 
-const postUrl = `${process.env["HOST"]}/api/start`;
+const postUrl = `${process.env["HOST"]}/api/echo`;
 
 export async function generateMetadata(): Promise<Metadata> {
   const imageUrl = `${process.env["HOST"]}/api/images/start?date=${Date.now()}`;
