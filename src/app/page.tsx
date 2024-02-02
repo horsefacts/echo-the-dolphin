@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Yoink from "@/app/components/Echo";
+import Echo from "@/app/components/Echo";
 
 const postUrl = `${process.env["HOST"]}/api/echo`;
 
@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Home() {
   return (
     <main className="flex flex-col text-center lg:p-16">
-      <Yoink />
+      <Echo />
     </main>
   );
 }

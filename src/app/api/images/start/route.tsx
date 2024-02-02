@@ -14,7 +14,8 @@ export async function GET() {
   const svg = await satori(
     <div
       style={{
-        justifyContent: "center",
+        paddingTop: 24,
+        justifyContent: "flex-start",
         alignItems: "center",
         textAlign: "center",
         display: "flex",
@@ -22,18 +23,17 @@ export async function GET() {
         width: "100%",
         height: "100%",
         backgroundColor: "white",
-        padding: 50,
         lineHeight: 1.2,
         fontSize: 24,
         color: "black",
       }}
     >
       <img
-        width="64"
-        height="64"
-        src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/15.0.3/72x72/1f42c.png"
+        width="210"
+        height="210"
+        src="https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/2639523a-690b-47af-16ab-ca07697fd000/original"
       />
-      <h1>Echo The Dolphin</h1>
+      <h1 style={{ margin: 0, color: '#0a588c' }}>Echo The Dolphin</h1>
       <div style={{ display: "flex" }}>
         Type something below and Echo will say it back.{" "}
       </div>
