@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
   const svg = await satori(
     <div
       style={{
-        paddingTop: 24,
+        paddingTop: 48,
         justifyContent: "flex-start",
         alignItems: "center",
         textAlign: "center",

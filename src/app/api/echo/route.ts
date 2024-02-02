@@ -4,6 +4,8 @@ import { getSSLHubRpcClient, Message } from "@farcaster/hub-nodejs";
 const HUB_URL = process.env["HUB_URL"] || "nemes.farcaster.xyz:2283";
 const hubClient = getSSLHubRpcClient(HUB_URL);
 
+const postUrl = `${process.env["HOST"]}/api/code`;
+
 export async function POST(req: NextRequest) {
   const {
     untrustedData: { inputText },
@@ -30,7 +32,10 @@ export async function POST(req: NextRequest) {
           <meta property="og:title" content="Echo Says:" />
           <meta property="og:image" content="${imageUrl}" />
           <meta name="fc:frame" content="vNext" />
+          <meta name="fc:frame:post_url" content="${postUrl}" />
           <meta name="fc:frame:image" content="${imageUrl}" />
+          <meta name="fc:frame:button:1" content="See code" />
+          <meta name="fc:frame:button:action" content="post_redirect" />
         </head>
         <body/>
       </html>`,
