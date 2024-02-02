@@ -13,7 +13,7 @@ export async function GET() {
   return new ImageResponse(
     <div
       style={{
-        paddingTop: 72,
+        paddingTop: 108,
         justifyContent: "flex-start",
         alignItems: "center",
         textAlign: "center",
