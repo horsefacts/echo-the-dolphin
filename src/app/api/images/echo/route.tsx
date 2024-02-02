@@ -71,7 +71,7 @@ export async function GET(req: NextRequest) {
       </div>
     ),
     {
-      width: 1200,
+      width: 1528,
       height: 800,
       fonts: [
         {
