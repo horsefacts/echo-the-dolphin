@@ -38,8 +38,8 @@ export async function GET() {
       </div>
     </div>,
     {
-      width: 600,
-      height: 400,
+      width: 1200,
+      height: 800,
       fonts: [
         {
           name: "Inter",
