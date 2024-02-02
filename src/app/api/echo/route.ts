@@ -20,7 +20,8 @@ export async function POST(req: NextRequest) {
       return new NextResponse("Bad Request", { status: 400 });
     }
 
-    const imageUrl = `${process.env["HOST"]}/api/images/echo?date=${Date.now()}&message=${inputText}`;
+    const message = inputText ?? "";
+    const imageUrl = `${process.env["HOST"]}/api/images/echo?date=${Date.now()}&message=${message}`;
     return new NextResponse(
       `<!DOCTYPE html>
       <html>
