@@ -18,9 +18,6 @@ export async function generateMetadata(): Promise<Metadata> {
       "fc:frame:post_url": postUrl,
       "fc:frame:input:text": "Type something here...",
       "fc:frame:button:1": "🐬 Echo",
-      "fc:frame:button:2": "🐬 Echo",
-      "fc:frame:button:3": "🐬 Echo",
-      "fc:frame:button:4": "🐬 Echo",
     },
   };
 }
