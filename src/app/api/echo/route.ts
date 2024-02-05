@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
           <meta name="fc:frame:image" content="${imageUrl}" />
           <meta name="fc:frame:button:1" content="See code" />
           <meta name="fc:frame:button:1:action" content="post_redirect" />
-          <meta name="fc:frame:button:1" content="(coming soon)" />
+          <meta name="fc:frame:button:2" content="(coming soon)" />
           <meta name="fc:frame:button:2:action" content="link" />
           <meta name="fc:frame:button:2:target" content="https://github.com/horsefacts/echo-the-dolphin" />
         </head>
